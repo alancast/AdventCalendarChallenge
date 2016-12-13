@@ -34,13 +34,13 @@ int main(int argc, char const** argv)
     for (int i = 0; i < line.size(); ++i)
     {
         answer.push_back('_');
-        answer_count.push_back(0);
+        answer_count.push_back(1000000);
     }
 
     for (std::map<std::pair<int,char>, int>::iterator it = characters.begin();
             it != characters.end(); ++it)
     {
-        if (it->second > answer_count[it->first.first])
+        if (it->second < answer_count[it->first.first])
         {
             answer_count[it->first.first] = it->second;
             answer[it->first.first] = it->first.second;
